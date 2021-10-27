@@ -52,5 +52,10 @@ def gradient_decent(data, theta, y, eta):
     return theta
 
 
-
+if __name__ == '__main__':
+    res = gradient_decent(data, theta, y, lr)
+    X = np.arange(3, 25)
+    Y = res[0] + res[1] * X
+    plt.plot(X, Y, color='r')
+    plt.show()
 
