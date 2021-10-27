@@ -20,6 +20,13 @@ def cost_function(data, theta, y):
 
 
 def gradient(data, theta, y):
+    """
+    计算梯度
+    :param data:
+    :param theta:
+    :param y:
+    :return:
+    """
     grad = np.empty(len(theta))
     grad[0] = np.sum(data.dot(theta) - y)
     for i in range(1, len((theta))):
