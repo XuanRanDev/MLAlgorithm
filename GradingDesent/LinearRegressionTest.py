@@ -45,7 +45,7 @@ def gradient_decent(data, theta, y, eta):
         因为计算机精度的问题其结果只能小于一个很小的数字
         否则，这个循环会不断执行
         """
-        if abs(cost_function(data, theta, y)) - cost_function(data, theta, y) <= 1E-15:
+        if abs(cost_function(data, last_theta, y)) - cost_function(data, theta, y) <= 1E-15:
             break
 
     return theta
