@@ -40,6 +40,11 @@ def gradient_decent(data, theta, y, eta):
         grad = gradient(data, theta, y)
         theta = theta - eta * grad
         print(theta)
+        """
+        为什么需要小于等于1E-15?
+        因为计算机精度的问题其结果只能小于一个很小的数字
+        否则，这个循环会不断执行
+        """
         if abs(cost_function(data, theta, y)) - cost_function(data, theta, y) <= 1E-15:
             break
 
