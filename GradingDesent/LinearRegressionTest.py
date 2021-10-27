@@ -19,3 +19,10 @@ def cost_function(data, theta, y):
     return cost / (m * 2)
 
 
+def gradient(data, theta, y):
+    grad = np.empty(len(theta))
+    grad[0] = np.sum(data.dot(theta) - y)
+    for i in range(1, len((theta))):
+        grad[i] = (data.dot(theta) - y).dot(data[:, i])
+    return grad
+
