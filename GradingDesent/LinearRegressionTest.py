@@ -26,3 +26,18 @@ def gradient(data, theta, y):
         grad[i] = (data.dot(theta) - y).dot(data[:, i])
     return grad
 
+
+def gradient_decent(data, theta, y, eta):
+    while True:
+        last_theta = theta
+        grad = gradient(data, theta, y)
+        theta = theta - eta * grad
+        print(theta)
+        if abs(cost_function(data, theta, y)) - cost_function(data, theta, y) <= 1E-15:
+            break
+
+    return theta
+
+
+
+
