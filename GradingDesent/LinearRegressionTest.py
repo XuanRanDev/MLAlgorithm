@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
+lr = 0.00001
 path = "data.txt"
 data = pd.read_csv(path, header=None)
 plt.scatter(data[:][0], data[:][1], marker='+')
